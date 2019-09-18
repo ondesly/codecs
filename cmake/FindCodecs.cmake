@@ -1,22 +1,22 @@
 set(CODECS_ROOT ${CMAKE_CURRENT_LIST_DIR}/../)
 
-set(CODECS_INCLUDE_DIRS ${CODECS_ROOT}/include ${CODECS_ROOT}/src)
+set(CODECS_INCLUDE_DIRS ${CODECS_ROOT}/include ${CODECS_ROOT}/libs/msgpack/include ${CODECS_ROOT}/src)
 
 #Base64
 
 set(BASE64_ROOT ${CODECS_ROOT}/libs/base64)
 
 set(BASE64_SRC
-	${BASE64_ROOT}/codec_choose.c
-	${BASE64_ROOT}/lib.c
-    ${BASE64_ROOT}/arch/avx/codec.c
-    ${BASE64_ROOT}/arch/avx2/codec.c
-    ${BASE64_ROOT}/arch/generic/codec.c
-    ${BASE64_ROOT}/arch/neon32/codec.c
-    ${BASE64_ROOT}/arch/neon64/codec.c
-    ${BASE64_ROOT}/arch/sse41/codec.c
-    ${BASE64_ROOT}/arch/sse42/codec.c
-    ${BASE64_ROOT}/arch/ssse3/codec.c)
+	${BASE64_ROOT}/lib/codec_choose.c
+	${BASE64_ROOT}/lib/lib.c
+    ${BASE64_ROOT}/lib/arch/avx/codec.c
+    ${BASE64_ROOT}/lib/arch/avx2/codec.c
+    ${BASE64_ROOT}/lib/arch/generic/codec.c
+    ${BASE64_ROOT}/lib/arch/neon32/codec.c
+    ${BASE64_ROOT}/lib/arch/neon64/codec.c
+    ${BASE64_ROOT}/lib/arch/sse41/codec.c
+    ${BASE64_ROOT}/lib/arch/sse42/codec.c
+    ${BASE64_ROOT}/lib/arch/ssse3/codec.c)
 
 #OpenSSL
 

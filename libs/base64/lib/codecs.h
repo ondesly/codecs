@@ -1,4 +1,4 @@
-//#include "config.h"
+#include "config.h"
 
 // Function parameters for encoding functions:
 #define BASE64_ENC_PARAMS			\

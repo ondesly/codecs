@@ -3,6 +3,8 @@
 // Copyright (c) 2019 ondesly. All rights reserved.
 //
 
+#include <cstddef>
+
 #include <base64/libbase64.h>
 #include <msgpack/msgpack.hpp>
 #include <openssl/aes.h>
