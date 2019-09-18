@@ -22,9 +22,9 @@ namespace codecs {
     class aes {
     public:
 
-        static std::string encode(const char *key, const char *iv, const std::string &data);
+        static std::string encode(const char *raw_key, const char *raw_iv, std::string data);
 
-        static std::string decode(const char *key, const char *iv, const std::string &data);
+        static std::string decode(const char *raw_key, const char *raw_iv, const std::string &data);
 
     };
 
