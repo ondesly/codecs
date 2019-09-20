@@ -50,6 +50,10 @@ std::string codecs::zip::encode(const std::string &data) {
 }
 
 std::string codecs::zip::decode(const std::string &data) {
+    if (data.empty()) {
+        return "";
+    }
+
     std::string decompressed;
 
     z_stream zs;
@@ -116,6 +120,10 @@ std::string codecs::aes::encode(const char *raw_key, const char *raw_iv, std::st
 }
 
 std::string codecs::aes::decode(const char *raw_key, const char *raw_iv, const std::string &data) {
+    if (data.empty()) {
+        return "";
+    }
+
     unsigned char decrypted[data.size()];
     const auto key = make_key(raw_key);
     const auto iv = make_key(raw_iv);
@@ -142,6 +150,10 @@ std::string codecs::base64::encode(const std::string &data) {
 }
 
 std::string codecs::base64::decode(const std::string &data) {
+    if (data.empty()) {
+        return "";
+    }
+
     char out[data.length() / 4 * 3 + 1];
     size_t out_len;
 
@@ -160,6 +172,10 @@ std::string codecs::msg::encode(const std::unordered_map<int, std::string> &data
 }
 
 std::unordered_map<int, std::string> codecs::msg::decode(const std::string &data) {
+    if (data.empty()) {
+        return {};
+    }
+
     auto oh = msgpack::unpack(data.data(), data.size());
 
     auto obj = oh.get();
