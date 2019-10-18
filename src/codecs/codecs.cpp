@@ -185,3 +185,25 @@ std::unordered_map<int, std::string> codecs::msg::decode(const std::string &data
 
     return buffer;
 }
+
+std::string codecs::msg::encode(const std::vector<int> &data) {
+    std::stringstream buffer;
+    msgpack::pack(buffer, data);
+
+    return buffer.str();
+}
+
+std::vector<int> codecs::msg::decode_to_vector(const std::string &data) {
+    if (data.empty()) {
+        return {};
+    }
+
+    auto oh = msgpack::unpack(data.data(), data.size());
+
+    auto obj = oh.get();
+
+    std::vector<int> buffer;
+    obj.convert(buffer);
+
+    return buffer;
+}

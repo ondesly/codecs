@@ -7,6 +7,7 @@
 
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 namespace codecs {
 
@@ -43,6 +44,10 @@ namespace codecs {
         static std::string encode(const std::unordered_map<int, std::string> &data);
 
         static std::unordered_map<int, std::string> decode(const std::string &data);
+        
+        static std::string encode(const std::vector<int> &data);
+
+        static std::vector<int> decode_to_vector(const std::string &data);
 
     };
 
