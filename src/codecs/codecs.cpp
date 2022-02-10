@@ -12,7 +12,7 @@
 #include <openssl/crypto.h>
 #include <zlib.h>
 
-#include "codecs.h"
+#include "codecs/codecs.h"
 
 // Zip
 
